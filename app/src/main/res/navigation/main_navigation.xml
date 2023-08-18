@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/charactersFragment">
+
+    <fragment
+        android:id="@+id/charactersFragment"
+        android:name="com.technipixl.exo1.CharactersFragment"
+        android:label="fragment_characters"
+        tools:layout="@layout/fragment_characters" >
+        <action
+            android:id="@+id/action_charactersFragment_to_comicsFragment"
+            app:destination="@id/comicsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/comicsFragment"
+        android:name="com.technipixl.exo1.ComicsFragment"
+        android:label="fragment_comics"
+        tools:layout="@layout/fragment_comics" >
+        <action
+            android:id="@+id/action_comicsFragment_to_comicsDetailFragment"
+            app:destination="@id/comicsDetailFragment" />
+        <argument
+            android:name="characterId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/comicsDetailFragment"
+        android:name="com.technipixl.exo1.ComicsDetailFragment"
+        android:label="fragment_comics_detail"
+        tools:layout="@layout/fragment_comics_detail" >
+        <argument
+            android:name="comicsId"
+            app:argType="string" />
+    </fragment>
+</navigation>
